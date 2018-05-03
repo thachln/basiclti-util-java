@@ -24,13 +24,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class BaseJsonLd extends BaseJson {
 
     @JsonProperty("@id")
-    @org.codehaus.jackson.annotate.JsonProperty("@id")
+//    @org.codehaus.jackson.annotate.JsonProperty("@id")
     protected String id;
     @JsonProperty("@context")
-    @org.codehaus.jackson.annotate.JsonProperty("@context")
+//    @org.codehaus.jackson.annotate.JsonProperty("@context")
     protected String context;
     @JsonProperty("@type")
-    @org.codehaus.jackson.annotate.JsonProperty("@type")
+//    @org.codehaus.jackson.annotate.JsonProperty("@type")
     protected String type;
 
     public String getId() {

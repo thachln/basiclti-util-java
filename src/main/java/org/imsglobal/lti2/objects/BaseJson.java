@@ -18,8 +18,9 @@ package org.imsglobal.lti2.objects;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.codehaus.jackson.annotate.JsonAnyGetter;
-import org.codehaus.jackson.annotate.JsonAnySetter;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 
 /**
  *
@@ -29,13 +30,13 @@ public class BaseJson {
     
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     
-    @com.fasterxml.jackson.annotation.JsonAnyGetter
+//    @com.fasterxml.jackson.annotation.JsonAnyGetter
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
     
-    @com.fasterxml.jackson.annotation.JsonAnySetter
+//    @com.fasterxml.jackson.annotation.JsonAnySetter
     @JsonAnySetter
     public void addAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
