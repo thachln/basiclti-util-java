@@ -35,18 +35,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.http.HttpStatus;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.ObjectWriter;
+import org.imsglobal.json.IMSJSONRequest;
 import org.imsglobal.lti.BasicLTIConstants;
 import org.imsglobal.lti.BasicLTIUtil;
 import org.imsglobal.lti.launch.LtiVerificationResult;
-import org.imsglobal.json.IMSJSONRequest;
 import org.imsglobal.lti2.objects.consumer.ServiceOffered;
 import org.imsglobal.lti2.objects.consumer.StandardServices;
 import org.imsglobal.lti2.objects.consumer.ToolConsumer;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 /**
  * Notes:
@@ -304,7 +305,8 @@ public class LTI2Servlet extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			// http://stackoverflow.com/questions/6176881/how-do-i-make-jackson-pretty-print-the-json-content-it-generates
-			ObjectWriter writer = mapper.defaultPrettyPrintingWriter();
+//			ObjectWriter writer = mapper.defaultPrettyPrintingWriter();
+			ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
 			// ***IMPORTANT!!!*** for Jackson 2.x use the line below instead of the one above:
 			// ObjectWriter writer = mapper.writer().withDefaultPrettyPrinter();
 			// System.out.println(mapper.writeValueAsString(consumer));

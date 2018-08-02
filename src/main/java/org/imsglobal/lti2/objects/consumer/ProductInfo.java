@@ -2,9 +2,9 @@
 package org.imsglobal.lti2.objects.consumer;
 
 import org.imsglobal.lti2.LTI2Config;
-
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
 import org.imsglobal.lti2.objects.BaseJson;
+
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
     "product_name",
